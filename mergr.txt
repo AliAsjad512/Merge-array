@@ -1,0 +1,85 @@
+public static int[] sorting(int arr[],int p,int c) {
+		int[] temp=new int[10];
+		for(int i=p;i<c;i++) {
+			for(int j=i+1;j<c;j++) {
+				if(arr[i] > arr[j]) {
+					temp[i]= arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp[i];
+				}
+			}
+		}
+		return temp;
+	}
+	
+	
+	
+	public static int[] merge(int arr[],int p,int c) {
+		int[] temp=new int[10];
+		for(int i=p;i<c;i++) {
+			for(int j=i+1;j<c;j++) {
+				if(arr[i] > arr[j]) {
+					temp[i]= arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp[i];
+				}
+			}
+		}
+		return temp;
+	}
+	
+	
+	
+	
+	
+	public static void Sort(int arr[],int l,int r) {
+		
+		int m= arr.length/2;
+		//System.out.println(m);
+		//System.out.println(r);
+		
+		sorting(arr,l,m);
+		sorting(arr,m,r+1);
+		
+		
+		merge(arr,l,r+1);
+		
+		
+		
+	}
+	
+	public static void print(int arr[],int l ,int r) {
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+			
+		}
+	}
+
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		
+		
+		
+		int arr[] = {12,11,13,7,5,6};
+		
+		
+		Sort(arr,0,arr.length-1);
+		
+		
+		print(arr,0,arr.length-1);
+		
+		
+		
+		
+		
+
+           
+           
+
+	}
+
+	
